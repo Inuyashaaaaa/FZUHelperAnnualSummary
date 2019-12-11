@@ -1,0 +1,41 @@
+<template>
+  <div class="view view1">
+    <view-clock></view-clock>
+    <view-table></view-table>
+    <view-letter></view-letter>
+  </div>
+</template>
+
+<script>
+import viewClock from '../annualSummary/view1/viewClock'
+import viewTable from '../annualSummary/view1/viewTable'
+import viewLetter from '../annualSummary/view1/viewLetter'
+export default {
+  name: 'view1',
+  components: {
+    viewClock,
+    viewTable,
+    viewLetter
+  },
+  methods: {
+
+  },
+  mounted: function () {
+
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+  .view1 {
+    z-index: -1
+    width: 100%
+    height: 100%
+    background-image: url('../../../static/image/view1/view1.png')
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+    transform-origin: center  center
+    transform: scale(1)
+  }
+</style>
