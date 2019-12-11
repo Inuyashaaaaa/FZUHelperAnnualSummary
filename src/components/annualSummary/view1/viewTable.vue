@@ -144,45 +144,45 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-//  .leaf1{
-//    animation: jiggle 8s infinite
-// }
+ .leaf1{
+   animation: jiggle 8s infinite
+}
 
-//  .leaf2 {
-//   animation: jiggle 8s infinite
-// }
+ .leaf2 {
+  animation: jiggle 8s infinite
+}
 
-//  .rattan1{
-//    animation: jiggle 8s infinite
-// }
+ .rattan1{
+   animation: jiggle 8s infinite
+}
 
-//  .rattan2{
-//    animation: jiggle 8s infinite
-// }
+ .rattan2{
+   animation: jiggle 8s infinite
+}
 
-//  .flower1 {
-//   animation: flowerTopAndBot 8s infinite
-// }
+ .flower1 {
+  animation: flowerTopAndBot 8s infinite
+}
 
-//  .flower2 {
-//   animation: flowerRatete2 8s infinite
-// }
+ .flower2 {
+  animation: flowerRatete2 8s infinite
+}
 
-//  .flower3 {
-//   animation: jiggle 8s infinite
-// }
+ .flower3 {
+  animation: jiggle 8s infinite
+}
 
-//  .flower4{
-//   animation: jiggle 8s infinite
-// }
+ .flower4{
+  animation: jiggle 8s infinite
+}
 
-//  .flower5 {
-//   animation: flowerRatete1 8s infinite
-// }
+ .flower5 {
+  animation: flowerRatete1 8s infinite
+}
 
-//  .rabbit {
-//   animation: slideInAndOut 16s infinite
-// }
+ .rabbit {
+  animation: slideInAndOut 16s infinite
+}
 
 .container {
   width: 100%

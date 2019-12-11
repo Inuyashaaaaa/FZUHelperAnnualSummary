@@ -187,34 +187,34 @@ export default {
     }
   }
 
-//  .rabbit{
-//   animation: scaleBgAndSm2 4s infinite
-// }
+ .rabbit{
+  animation: scaleBgAndSm2 4s infinite
+}
 
-//  .leaf {
-//   animation: jiggle 8s infinite
-// }
+ .leaf {
+  animation: jiggle 8s infinite
+}
 
-//  .vegtation {
-//   animation: scaleBgAndSm1 4s infinite
-// }
+ .vegtation {
+  animation: scaleBgAndSm1 4s infinite
+}
 
-//  .flower1 {
-//   animation: scaleBgAndSm2 4s infinite linear
-// }
+ .flower1 {
+  animation: scaleBgAndSm2 4s infinite linear
+}
 
-//  .rattan1 {
-//   animation: jiggle2 8s infinite
-// }
+ .rattan1 {
+  animation: jiggle2 8s infinite
+}
 
-//  .rattan2 {
-//   animation: jiggle2 8s infinite
-// }
+ .rattan2 {
+  animation: jiggle2 8s infinite
+}
 
-//  .arm {
-//   animation: slideOut 2s ease-out
-//   animation-fill-mode: forwards
-// }
+ .arm {
+  animation: slideOut 2s ease-out
+  animation-fill-mode: forwards
+}
 
 @keyframes jiggle {
     0% {

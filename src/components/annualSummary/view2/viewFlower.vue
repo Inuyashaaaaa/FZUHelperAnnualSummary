@@ -14,10 +14,10 @@ export default {
 
 <style lang="stylus" scoped>
 
-//  .flower {
-//   animation: windFlower 100s linear
-//   animation-fill-mode: forwards;
-// }
+ .flower {
+  animation: windFlower 100s linear
+  animation-fill-mode: forwards;
+}
 
   .container {
     position: relative
