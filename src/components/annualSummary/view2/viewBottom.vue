@@ -187,31 +187,31 @@ export default {
     }
   }
 
- .rabbit{
+.swiper-slide-active .rabbit{
   animation: scaleBgAndSm2 4s infinite
 }
 
- .leaf {
+.swiper-slide-active .leaf {
   animation: jiggle 8s infinite
 }
 
- .vegtation {
+.swiper-slide-active .vegtation {
   animation: scaleBgAndSm1 4s infinite
 }
 
- .flower1 {
+.swiper-slide-active .flower1 {
   animation: scaleBgAndSm2 4s infinite linear
 }
 
- .rattan1 {
+.swiper-slide-active .rattan1 {
   animation: jiggle2 8s infinite
 }
 
- .rattan2 {
+.swiper-slide-active .rattan2 {
   animation: jiggle2 8s infinite
 }
 
- .arm {
+.swiper-slide-active .arm {
   animation: slideOut 2s ease-out
   animation-fill-mode: forwards
 }

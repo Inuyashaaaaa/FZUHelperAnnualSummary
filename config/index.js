@@ -10,7 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: 'http://47.102.118.1:5050/api',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -45,10 +53,10 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../annualsummary/index.html'),
+    index: path.resolve(__dirname, '../public/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../annualsummary'),
+    assetsRoot: path.resolve(__dirname, '../public'),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
 
