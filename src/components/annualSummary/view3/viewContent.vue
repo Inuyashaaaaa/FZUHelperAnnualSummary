@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" :style="fontContent">
     <p class="p1">这学期里<br>你一共使用了<span class="strong"> {{this.$store.state.fdzs}} </span>次福大助手</p>
     <p class="p2"><br>你专注于学习<br>查询了<span class="strong"> {{this.$store.state.kjs}} </span>次空教室</p>
     <p class="p3"><br>你打开了<span class="strong"> {{this.$store.state.dwsy}} </span>次大物实验<br>在实验的海洋里游玩</p>
@@ -14,17 +14,23 @@ export default {
   name: 'viewContent',
   data: function () {
     return {
-
+      fontContent: {
+        fontSize: ''
+      }
     }
   },
   mounted: function () {
-
+    let w = document.documentElement.clientWidth
+    let h = document.documentElement.clientHeight
+    let e1 = (h * 439 / w - 796) / 796 / 1.2 + 1
+    let e = w / 439
+    this.fontContent.fontSize = 16 * e1 * e + 'px'
   },
   computed: {
-    islearningman: function() {
+    islearningman: function () {
       return this.$store.state.cjcx > 10 && this.$store.state.kjs > 5
     },
-    isbuddle: function() {
+    isbuddle: function () {
       return this.$store.state.kjs <= 5 && this.$store.state.cjcx <= 10
     }
   }
@@ -60,7 +66,6 @@ export default {
 
 .content {
   font-family: "viewFont"
-  font-size: 16px
   letter-spacing: 1px;
   width: 100%
   height: 100%

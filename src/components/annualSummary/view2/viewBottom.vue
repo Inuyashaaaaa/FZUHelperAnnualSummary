@@ -92,10 +92,10 @@ export default {
     w *= e
     if (e < 1.2) {
       this.viewStyle.transformOrigin = 'center 100%'
-      this.viewStyle.transform = 'translateX(' + (e - 1) * w * (-1) + 'px) ' +
-      'scale(' + 1.3 / e + ')'
+      this.viewStyle.transform = 'translateX(' + (e - 1) * w / 2 * (-1) + 'px) ' +
+      'scale(' + 1.2 / e + ')'
     } else {
-      this.viewStyle.transform = 'translateX(' + (e - 1) * w / 4 * (-1) + 'px)'
+      this.viewStyle.transform = 'translateX(' + (e - 1) * w / 2 * (-1) + 'px)'
     }
     this.renderDivStyle(this.rabbitStyle, [0.16, 0.16, 0.74, 0.335], h, w)
     this.renderDivStyle(this.leafStyle, [0.36, 0.36, 0.76, 0.014], h, w)

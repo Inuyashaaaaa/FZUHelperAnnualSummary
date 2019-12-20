@@ -25,7 +25,7 @@ export default {
     this.letterStyle.top = 0.2 * h + 'px'
     this.letterStyle.width = 0.20 * w + 'px'
     this.letterStyle.height = 0.20 * h + 'px'
-    this.letterStyle.right = 0.15 * w + 'px'
+    this.letterStyle.right = 0.10 * w + 'px'
   }
 }
 </script>

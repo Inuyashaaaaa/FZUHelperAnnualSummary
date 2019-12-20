@@ -38,7 +38,7 @@ export default {
     let e1 = (h * 608 / w - 883) / 883 / 1.2 + 1
     let e = w / 608
     this.headStyle.fontSize = 26 * e * e1 + 'px'
-    this.fontStyle.fontSize = 18 * e * e1 + 'px'
+    this.fontStyle.fontSize = 20 * e * e1 + 'px'
   }
 }
 </script>
@@ -66,7 +66,7 @@ export default {
   width: 100%
   height: 100%
   top: 13%
-  left: 15%
+  left: 13%
   position: absolute
   color: #242864
   font-weight: 500

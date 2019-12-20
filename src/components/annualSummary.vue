@@ -5,7 +5,8 @@
       <swiper-slide><view1></view1></swiper-slide>
       <swiper-slide><view2></view2></swiper-slide>
       <swiper-slide><view3></view3></swiper-slide>
-      <swiper-slide>I'm Slide 4</swiper-slide>
+      <swiper-slide><view4></view4></swiper-slide>
+      <swiper-slide><view5></view5></swiper-slide>
     </swiper>
   </div>
 </template>
@@ -14,12 +15,16 @@
 import view1 from '@/components/annualSummary/view1'
 import view2 from '@/components/annualSummary/view2'
 import view3 from '@/components/annualSummary/view3'
+import view4 from '@/components/annualSummary/view4'
+import view5 from '@/components/annualSummary/view5'
 export default {
   name: 'annualSummary',
   components: {
     view1,
     view2,
-    view3
+    view3,
+    view4,
+    view5
   },
   data () {
     return {
