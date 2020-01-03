@@ -1,40 +1,40 @@
 <template>
-  <div class="page-container" style="text-align: center;">
-    <div id="loading-panel">
-      <h1><strong>Loading...</strong></h1>
-      <h2><strong>{{percent}}</strong></h2>
-    </div>
+  <div class="container" :style="loadingStyle">
+    <loading></loading>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import loading from './loading/loading.vue'
 export default {
   data () {
     return {
       count: 0,
-      percent: '',
-      total: -1
+      total: -1,
+      loadingStyle: {
+        height: ''
+      }
     }
   },
+  components: {
+    loading
+  },
   mounted: function () {
+    this.loadingStyle.height = window.innerHeight + 'px'
+    // console.log(window.innerHeight)
+    window.onGetData = this.onGetData
+    jsInterface.getData()
     this.preload()
   },
   methods: {
+    onGetData: function (userInfo) {
+      // alert(userInfo)
+      alert('傻逼')
+      this.count++
+      return '123'
+    },
     waitData: function () {
-      const that = this
-      axios.get('/api/user/221801107')
-        .then((res) => {
-          that.count++
-          let data = res.data.message
-          this.$store.dispatch('changefdzs', data.fdzs)
-          this.$store.dispatch('changedwsy', data.dwsy)
-          this.$store.dispatch('changekjs', data.kjs)
-          this.$store.dispatch('changecjcx', data.cjcx)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+      // alert('123')
     },
     loadImg: function () {
       let imgs = [
@@ -70,16 +70,12 @@ export default {
       for (let img of imgs) {
         let image = new Image()
         image.src = img
-        console.log('?')
         image.onerror = () => {
           console.log('error')
         }
         image.onload = () => {
-          console.log('load')
           this.count++
-          // 计算图片加载的百分数，绑定到percent变量
-          let percentNum = Math.floor(this.count / this.total * 100)
-          this.percent = `${percentNum}%`
+
         }
       }
     },
@@ -96,12 +92,17 @@ export default {
         // 图片加载完成后跳转页面
         setTimeout(() => {
           this.$router.push({path: 'cover'})
-        }, 1000)
+        }, 500)
       }
     }
   }
 }
 </script>
-<style>
-
+<style lang="stylus" scoped>
+  .container {
+    width: 100%
+    background-image: url('../../../static/image/view1/view1.png')
+    background-size cover
+    position relative
+  }
 </style>

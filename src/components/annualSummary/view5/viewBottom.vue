@@ -9,7 +9,7 @@
     <div class="balloon1" :style="balloon1Style"></div>
     <div class="balloon2" :style="balloon2Style"></div>
     <div class="balloon3" :style="balloon3Style"></div>
-    <div class="button" :style="buttonStyle"></div>
+    <div class="button" @click="handleClick" :style="buttonStyle"></div>
   </div>
 </template>
 
@@ -90,6 +90,9 @@ export default {
       dom.height = h * array[1] + 'px'
       dom.top = h * array[2] + 'px'
       dom.left = w * array[3] + 'px'
+    },
+    handleClick: function() {
+      jsInterface.share()
     }
   },
   mounted: function () {
@@ -190,6 +193,7 @@ export default {
 }
 
   .view-bottom {
+    z-index 1
     width: 100%
     height: 100%
     top: 0%

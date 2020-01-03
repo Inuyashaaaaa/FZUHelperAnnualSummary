@@ -8,7 +8,8 @@ export default new Vuex.Store({
     'fdzs': 0,
     'dwsy': 0,
     'kjs': 0,
-    'cjcx': 0
+    'cjcx': 0,
+    'showSwiper': false
   },
   actions: {
     changefdzs (ctx, fdzs) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     },
     changecjcx (ctx, cjcx) {
       ctx.commit('changecjcx', cjcx)
+    },
+    changeShow (ctx, showSwiper) {
+      ctx.commit('changeShow', showSwiper)
     }
   },
   mutations: {
@@ -36,6 +40,9 @@ export default new Vuex.Store({
     },
     changecjcx (state, cjcx) {
       state.cjcx = cjcx
+    },
+    changeShow (state, showSwiper) {
+      state.showSwiper = showSwiper
     }
   }
 })

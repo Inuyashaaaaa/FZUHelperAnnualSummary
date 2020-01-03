@@ -7,7 +7,10 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import '@/assets/styles/font.css'
 import 'swiper/dist/css/swiper.css'
 import router from './router'
+import animated from 'animate.css'
+
 Vue.use(VueAwesomeSwiper)
+Vue.use(animated)
 
 Vue.config.productionTip = false
 

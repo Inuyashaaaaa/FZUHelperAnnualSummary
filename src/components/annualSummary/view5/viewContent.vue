@@ -46,6 +46,7 @@ export default {
 }
 
 .content {
+  z-index: -1
   font-family: "viewFont"
   letter-spacing: 1px;
   width: 100%

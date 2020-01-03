@@ -33,6 +33,14 @@
     <div class="rabbit" v-bind:style="rabbitStyle">
 
     </div>
+    <!-- <div class="explore" :style="exploreStyle" @click="handleClick">
+    </div>
+    <div class="textContent animated" :style="textStyle" ref="textContainer">
+      <input type="checkbox" class="check-btn" :style="checkStyle" ref="checkBtn">
+      <span>我同意福大助手使用我的<br>历史数据生成《我有你,真好》</span><br>
+      <br>
+      <small>所有数据截至至2019年12月底</small>
+    </div> -->
   </div>
 </template>
 
@@ -47,7 +55,8 @@ export default {
       tableStyle: {
         bottom: '',
         width: '',
-        height: ''
+        height: '',
+        left: ''
       },
       leaf1Style: {
         top: '',
@@ -104,7 +113,28 @@ export default {
         left: ''
       },
       rabbitStyle: {
-
+        width: '',
+        height: '',
+        top: '',
+        left: ''
+      },
+      exploreStyle: {
+        width: '',
+        height: '',
+        top: '',
+        left: '',
+        transform: ''
+      },
+      textStyle: {
+        width: '',
+        height: '',
+        top: '',
+        left: '',
+        fontSize: '',
+        transform: ''
+      },
+      checkStyle: {
+        zoom: ''
       }
     }
   },
@@ -115,20 +145,35 @@ export default {
       dom.top = h * array[2] + 'px'
       dom.left = w * array[3] + 'px'
     }
+    ,
+    // handleClick: function(e) {
+    //   if(this.$refs.checkBtn.checked) {
+    //     this.$store.dispatch('changeShow', true)
+    //   }
+    //   else {
+    //     // console.log(this.$refs.textContainer.classList)
+    //     console.log(this.$refs)
+    //     this.$refs.textContainer.classList.remove('shake')
+    //     this.$refs.textContainer.classList.add('shake')
+
+    //   }
+
+    // }
   },
   mounted: function () {
     let w = document.documentElement.clientWidth
     let h = document.documentElement.clientHeight
     let e = (h * 2 / w - 3) / 3 + 1
+    let e1 = (h * 2000 / w - 3000) / 3000 / 1.2 + 1
+    let e2 = w / 2000
     w *= e
-    this.viewStyle.transform = 'translateX(-' + (e - 1) * w / 2 + 'px)'
-    this.tableStyle.bottom = -0.25 * h + 'px'
-    this.tableStyle.width = 0.9 * w + 'px'
-    this.tableStyle.height = h * 0.9 + 'px'
-    //     width: 7%
-    // height: 7%
-    // top: 53%
-    // left: 23%
+
+    // this.viewStyle.transform = 'translateX(-' + (e - 1) * w / 8 + 'px)'
+    this.tableStyle.bottom = -0.20 * h + 'px'
+    this.tableStyle.width = 0.8 * w + 'px'
+    this.tableStyle.height = h * 0.8 + 'px'
+    this.tableStyle.left = -0.126 * w + 'px'
+
     this.renderDivStyle(this.leaf1Style, [0.5, 0.5, 0.7, 0.405], h, w)
     this.renderDivStyle(this.leaf2Style, [0.22, 0.22, 0.57, 0.55], h, w)
     this.renderDivStyle(this.rattan1Style, [0.26, 0.26, 0.69, 0.55], h, w)
@@ -138,48 +183,52 @@ export default {
     this.renderDivStyle(this.flower3Style, [0.08, 0.08, 0.615, 0.61], h, w)
     this.renderDivStyle(this.flower4Style, [0.08, 0.08, 0.75, 0.63], h, w)
     this.renderDivStyle(this.flower5Style, [0.09, 0.09, 0.83, 0.665], h, w)
-    this.renderDivStyle(this.rabbitStyle, [0.07, 0.07, 0.53, 0.23], h, w)
+    this.renderDivStyle(this.rabbitStyle, [0.07, 0.07, 0.59, 0.19], h, w)
+    this.renderDivStyle(this.exploreStyle, [0.17, 0.12, 0.70, 0.40], h, w)
+    // this.exploreStyle.transform = 'translateX(-' + (e - 1) * w / 8 + 'px)'
+    this.exploreStyle.left = (document.documentElement.clientWidth -
+    parseFloat(this.exploreStyle.width)) / 2 + 'px'
+    console.log((document.documentElement.clientWidth -
+    parseFloat(this.exploreStyle.width)) / 2 + 'px')
+    this.renderDivStyle(this.textStyle, [1, 0.2, 0.86, 0.0], h, w)
+    this.textStyle.transform = 'translateX(+' + (e - 1) * w / 8 + 'px)'
+    this.textStyle.width = document.documentElement.clientWidth + 'px'
+    this.textStyle.fontSize = 55 * e1 * e2 + 'px'
+    this.checkStyle.zoom = 4 * e1 * e2
+    // width: 15%
+    // height: 15%
   }
 }
 </script>
 
 <style lang="stylus" scoped>
- .leaf1{
+.leaf1{
    animation: jiggle 8s infinite
 }
-
  .leaf2 {
   animation: jiggle 8s infinite
 }
-
  .rattan1{
    animation: jiggle 8s infinite
 }
-
  .rattan2{
    animation: jiggle 8s infinite
 }
-
  .flower1 {
   animation: flowerTopAndBot 8s infinite
 }
-
  .flower2 {
   animation: flowerRatete2 8s infinite
 }
-
  .flower3 {
   animation: jiggle 8s infinite
 }
-
  .flower4{
   animation: jiggle 8s infinite
 }
-
  .flower5 {
   animation: flowerRatete1 8s infinite
 }
-
  .rabbit {
   animation: slideInAndOut 16s infinite
 }
@@ -266,12 +315,36 @@ export default {
     transform-origin: 0 100%
   }
 
+  .explore {
+    z-index: 3
+    position: absolute
+    // box-shadow 1px 1px 40px 10px #91b5d4
+    border-radius 50%
+    cursor: pointer
+    background-image: url('../../../../static/image/view1/explore.png')
+    background-size: contain
+    background-repeat: no-repeat
+  }
+
   .rabbit{
     z-index: 2
     position: absolute
     background-image: url('../../../../static/image/view1/rabbit.png')
     background-size: contain
     background-repeat: no-repeat
+  }
+
+  .textContent{
+    // font-family viewFont
+    color: #c67352
+    z-index 10
+    position absolute
+    text-align center
+  }
+  .check-btn {
+    background-color: transparent
+    zoom 80%
+    // outline 1px solid #c67352
   }
   @keyframes jiggle {
     0% {

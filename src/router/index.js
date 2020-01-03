@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import annualSummary from '@/components/annualSummary'
 import loading from '@/components/annualSummary/loading'
+import demo from '@/components/demo'
 
 Vue.use(Router)
 
@@ -14,8 +15,8 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'loading',
-      component: loading
+      name: 'demo',
+      component: demo
     }
   ]
 })

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" ref="annual">
     <keep-alive>
       <router-view/>
     </keep-alive>
@@ -8,15 +8,32 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    
+  },
+  mounted: function() {
+//     this.$refs.annual.addEventListener('touchstart', function(e) {
+//     switch (e.touches.length) {
+//      case 1: alert('haha'); break;
+//      case 2: alert('two'); break;
+//      default: console.log("Not supported"); break;
+//    }   
+//  }, false);
+  }
 }
 </script>
 
-<style>
+<style lang="stylus">
 * {
   margin: 0;
   padding: 0;
-  position: relative;
+  #app {
+
+    overflow: hidden
+  }
 }
+
+
 
 </style>
