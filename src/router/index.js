@@ -2,11 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import annualSummary from '@/components/annualSummary'
 import loading from '@/components/annualSummary/loading'
-import demo from '@/components/demo'
+import guidance from '@/components/annualSummary/guidance'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
+  base: process.env.baseUrl,
   routes: [
     {
       path: '/cover',
@@ -15,8 +17,22 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'demo',
-      component: demo
+      name: 'loading',
+      component: loading
+    },
+    {
+      path: '/guidance',
+      name: 'guidance',
+      component: guidance
     }
   ]
 })
+// router.beforeEach((to, from, next) =>{
+//       if (to.path !== global.location.pathname) {
+//           location.assign(to.fullPath)
+//       }
+//       next() 
+// }) 
+
+
+export default router

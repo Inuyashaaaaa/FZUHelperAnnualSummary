@@ -104,8 +104,8 @@ export default {
     this.renderDivStyle(this.flower2Style, [0.27, 0.27, 0.855, 0.11], h, w)
     this.renderDivStyle(this.rattan1Style, [0.45, 0.45, 0.66, 0.09], h, w)
     this.renderDivStyle(this.rattan2Style, [0.285, 0.285, 0.61, 0.435], h, w)
-    this.renderDivStyle(this.personStyle, [0.72, 0.72, 0.475, 0.46], h, w)
-    this.renderDivStyle(this.armStyle, [0.36, 0.262, 0.585, 0.62], h, w)
+    this.renderDivStyle(this.personStyle, [0.72, 0.72, 0.475, 0.53], h, w)
+    this.renderDivStyle(this.armStyle, [0.36, 0.262, 0.585, 0.69], h, w)
   }
 }
 </script>

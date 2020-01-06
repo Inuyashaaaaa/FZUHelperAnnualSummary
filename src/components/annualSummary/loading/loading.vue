@@ -14,7 +14,7 @@
 <script>
 export default {
   name: 'loading',
-  data: function() {
+  data: function () {
     return {
     }
   }
@@ -126,7 +126,7 @@ export default {
 }
 
 .rotate {
-  animation rotateFlower 2.5s infinite
+  animation rotateFlower 10s infinite
 }
 
 @keyframes rotateFlower {
@@ -170,8 +170,6 @@ export default {
     opacity 1
   }
 }
-
-
 
 @keyframes UpAndDown {
   0% {

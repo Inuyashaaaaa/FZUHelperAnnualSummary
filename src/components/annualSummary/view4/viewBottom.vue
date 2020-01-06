@@ -98,15 +98,15 @@ export default {
     w *= e
     this.viewStyle.transform = 'translateX(' + (e - 1) * w / 4 * (-1) + 'px)'
     this.renderDivStyle(this.course1Style, [1.7, 1.7, 0.45, -0.35], h, w)
-    this.renderDivStyle(this.feet1Style, [0.13, 0.13, 0.572, 0.898], h, w)
-    this.renderDivStyle(this.feet2Style, [0.13, 0.13, 0.6, 0.89], h, w)
+    this.renderDivStyle(this.feet1Style, [0.10, 0.10, 0.60, 0.80], h, w)
+    this.renderDivStyle(this.feet2Style, [0.10, 0.10, 0.62, 0.80], h, w)
     this.renderDivStyle(this.leaf1Style, [0.57, 0.57, 0.57, -0.25], h, w)
     this.renderDivStyle(this.leaf2Style, [0.3, 0.3, 0.83, -0.05], h, w)
     this.renderDivStyle(this.rattanStyle, [0.3, 0.3, 0.82, 0.48], h, w)
     this.renderDivStyle(this.flower1Style, [0.12, 0.12, 0.95, 0.67], h, w)
     this.renderDivStyle(this.flower2Style, [0.25, 0.25, 0.67, -0.09], h, w)
     this.renderDivStyle(this.course2Style, [0.52, 0.52, 0.82, -0.09], h, w)
-    this.renderDivStyle(this.personStyle, [0.50, 0.50, 0.59, 0.43], h, w)
+    this.renderDivStyle(this.personStyle, [0.40, 0.40, 0.61, 0.43], h, w)
   }
 }
 </script>

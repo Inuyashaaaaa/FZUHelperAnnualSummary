@@ -10,16 +10,6 @@
 export default {
   name: 'App',
   methods: {
-    
-  },
-  mounted: function() {
-//     this.$refs.annual.addEventListener('touchstart', function(e) {
-//     switch (e.touches.length) {
-//      case 1: alert('haha'); break;
-//      case 2: alert('two'); break;
-//      default: console.log("Not supported"); break;
-//    }   
-//  }, false);
   }
 }
 </script>
@@ -33,7 +23,4 @@ export default {
     overflow: hidden
   }
 }
-
-
-
 </style>

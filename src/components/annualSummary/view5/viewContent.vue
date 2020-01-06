@@ -1,8 +1,14 @@
 <template>
   <div class="content" :style="fontContent">
-    <p class="p1">这个学期<br>你的秃头值是<span class="strong"> 1080ti</span></p>
-    <p class="p2"><br>打败了<span class="strong"> 20% </span>的人</p>
-    <p class="p3"><br>在秃头的道路上越走越远</p>
+    <p class="p1">
+      这个学期
+      <br><span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>的秃头值是
+      <span class="strong"> {{this.$store.state.tt}}ti</span>
+    </p>
+    <p class="p2"><br>打败了<span class="strong"> {{(this.$store.state.ttPerc * 100).toFixed(2)}}% </span>的人</p>
+    <p class="p3" v-if="this.$store.state.ttPerc < 0.3"><br>秃头与<span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>无缘</p>
+    <p class="p3" v-else-if="this.$store.state.ttPerc < 0.7"><br>小心秃头,注意保养</p>
+    <p class="p3" v-else><br>在秃头的道路上越走越远</p>
   </div>
 </template>
 
@@ -16,6 +22,9 @@ export default {
         lineHeight: ''
       }
     }
+  },
+  methods: {
+  
   },
   mounted: function () {
     let w = document.documentElement.clientWidth
@@ -46,11 +55,11 @@ export default {
 }
 
 .content {
-  z-index: -1
+  z-index: 100
   font-family: "viewFont"
   letter-spacing: 1px;
   width: 100%
-  height: 100%
+  height: 40%
   top: 13%
   left: 10%
   position: absolute

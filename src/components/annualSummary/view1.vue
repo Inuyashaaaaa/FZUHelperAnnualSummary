@@ -13,7 +13,7 @@ import viewLetter from '../annualSummary/view1/viewLetter'
 export default {
   name: 'view1',
   // props: ['music'],
-  data: function() {
+  data: function () {
     return {
       view1Style: {
         height: ''
@@ -29,7 +29,6 @@ export default {
 
   },
   mounted: function () {
-    console.log(this.music + 's')
     // this.view1Style.height = window.innerHeight
   }
 }

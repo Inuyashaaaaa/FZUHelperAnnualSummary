@@ -9,7 +9,14 @@ export default new Vuex.Store({
     'dwsy': 0,
     'kjs': 0,
     'cjcx': 0,
-    'showSwiper': false
+    'showSwiper': false,
+    'showInApp': false,
+    'kc': 0,
+    'kcPerc': 0,
+    'tt': 0,
+    'ttPerc': 0,
+    'studentId': null,
+    'token': null
   },
   actions: {
     changefdzs (ctx, fdzs) {
@@ -26,6 +33,30 @@ export default new Vuex.Store({
     },
     changeShow (ctx, showSwiper) {
       ctx.commit('changeShow', showSwiper)
+    },
+    changeInApp (ctx, showInApp) {
+      ctx.commit('changeInApp', showInApp)
+    },
+    changeKc (ctx, kc) {
+      ctx.commit('changeKc', kc)
+    },
+    changeKcPerc (ctx, kcPerc) {
+      ctx.commit('changeKcPerc', kcPerc)
+    },
+    changeTt (ctx, tt) {
+      ctx.commit('changeTt', tt)
+    },
+    changeTtPerc (ctx, ttPerc) {
+      ctx.commit('changeTtPerc', ttPerc)
+    },
+    changeStudentId (ctx, studentId) {
+      ctx.commit('changeStudentId', studentId)
+    },
+    changeToken (ctx, token) {
+      ctx.commit('changeToken', token)
+    },
+    changeGraduate (ctx, graduate) {
+      ctx.commit('changeGraduate', graduate)
     }
   },
   mutations: {
@@ -43,6 +74,30 @@ export default new Vuex.Store({
     },
     changeShow (state, showSwiper) {
       state.showSwiper = showSwiper
+    },
+    changeInApp (state, showInApp) {
+      state.showInApp = showInApp
+    },
+    changeKc (state, kc) {
+      state.kc = kc
+    },
+    changeKcPerc (state, kcPerc) {
+      state.kcPerc = kcPerc
+    },
+    changeTt (state, tt) {
+      state.tt = tt
+    },
+    changeTtPerc (state, ttPerc) {
+      state.ttPerc = ttPerc
+    },
+    changeStudentId (state, studentId) {
+      state.studentId = studentId
+    },
+    changeToken (state, token) {
+      state.token = token
+    },
+    changeGraduate (state, graduate) {
+      state.graduate = graduate
     }
   }
 })

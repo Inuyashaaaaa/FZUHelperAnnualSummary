@@ -6,6 +6,8 @@
 
 <script>
 import loading from './loading/loading.vue'
+import querystring from 'querystring'
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -20,21 +22,50 @@ export default {
     loading
   },
   mounted: function () {
-    this.loadingStyle.height = window.innerHeight + 'px'
-    // console.log(window.innerHeight)
-    window.onGetData = this.onGetData
-    jsInterface.getData()
-    this.preload()
+    
+    if (/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(navigator.userAgent)) {
+      this.loadingStyle.height = window.innerHeight + 'px'
+      try {
+        jsInterface
+        this.$store.dispatch('changeInApp', true)
+      }
+      catch(err) {
+        
+      }
+      this.preload()
+    } else {
+      this.$router.push({path: 'guidance'})
+      
+    }
+
   },
   methods: {
-    onGetData: function (userInfo) {
-      // alert(userInfo)
-      alert('傻逼')
-      this.count++
-      return '123'
-    },
     waitData: function () {
-      // alert('123')
+      let href = location.href
+      let tokenString = href.split('?')[1]
+      let { token, graduate } = querystring.parse(tokenString)
+      this.$store.dispatch('changeToken', token)
+      this.$store.dispatch('changeGraduate', graduate)
+      let path = 'https://statistics.fzuhelper.w2fzu.com/api/user/' + token
+      axios.get(path)
+      .then(res=>{
+        let data = res['data']['message']
+        this.$store.dispatch('changefdzs', data['fdzs'])
+        this.$store.dispatch('changekjs', data['kjs'])
+        this.$store.dispatch('changedwsy', data['dwsy'])
+        this.$store.dispatch('changecjcx', data['cjcx'])
+        this.$store.dispatch('changeTt', data['tt'])
+        this.$store.dispatch('changeTtPerc', data['tt_perc'])
+        this.$store.dispatch('changeKcPerc', data['kc_perc'])
+        this.$store.dispatch('changeKc', data['kc'])
+        this.$store.dispatch('changeStudentId', data['student_id'])
+
+
+        this.count++        
+      }).catch(err => {
+      }) 
+
+      
     },
     loadImg: function () {
       let imgs = [
@@ -66,16 +97,14 @@ export default {
         'static/image/view2/view2-0.png',
         'static/image/view2/view2-1.png'
       ]
-      this.total = imgs.length + 1
+      this.total = imgs.length
       for (let img of imgs) {
         let image = new Image()
         image.src = img
         image.onerror = () => {
-          console.log('error')
         }
         image.onload = () => {
           this.count++
-
         }
       }
     },
@@ -87,11 +116,9 @@ export default {
 
   watch: {
     count: function (val) {
-      // console.log(val)
       if (val === this.total) {
-        // 图片加载完成后跳转页面
         setTimeout(() => {
-          this.$router.push({path: 'cover'})
+          this.$router.push({path: 'cover', query:{token: this.$store.state.token, graduate: this.$store.state.graduate }})
         }, 500)
       }
     }

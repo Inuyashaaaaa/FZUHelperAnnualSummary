@@ -13,18 +13,18 @@ export default {
   data: function () {
     return {
       clockStyle: {
-        width: '760px',
-        height: '900px',
-        top: '120px',
-        left: '200px',
+        width: '',
+        height: '',
+        top: '',
+        left: '',
         transform: ''
       },
       minPointStyle: {
-        width: '190px',
-        height: '225px',
-        top: '427.5px',
-        left: '364.8px',
-        transformOrigin: '-28.5px 0px'
+        width: '',
+        height: '',
+        top: '',
+        left: '',
+        transformOrigin: ''
       },
       hourPointStyle: {
         width: '',
@@ -62,11 +62,11 @@ export default {
 <style lang="stylus" scoped>
 /* 根据2000 * 3000 设置*/
 
-.swiper-slide-active .min-point {
+.min-point {
   animation: pointRotate 15s infinite linear
 }
 
-.swiper-slide-active .hour-point {
+.hour-point {
   animation: pointRotate 180s infinite linear
 }
 @keyframes pointRotate {

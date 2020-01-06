@@ -1,7 +1,7 @@
 <template>
   <div class="view5">
-    <view-bottom></view-bottom>
     <view-content></view-content>
+    <view-bottom></view-bottom>
   </div>
 </template>
 

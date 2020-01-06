@@ -14,7 +14,7 @@ export default {
 
 <style lang="stylus" scoped>
 
- .flower {
+.swiper-slide-active .flower {
   animation: windFlower 100s linear
   animation-fill-mode: forwards;
 }

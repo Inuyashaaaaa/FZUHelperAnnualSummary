@@ -1,11 +1,11 @@
 <template>
   <div class="content" :style="fontContent">
-    <p class="p1">这学期里<br>你一共使用了<span class="strong"> {{this.$store.state.fdzs}} </span>次福大助手</p>
-    <p class="p2"><br>你专注于学习<br>查询了<span class="strong"> {{this.$store.state.kjs}} </span>次空教室</p>
-    <p class="p3"><br>你打开了<span class="strong"> {{this.$store.state.dwsy}} </span>次大物实验<br>在实验的海洋里游玩</p>
-    <p class="p4" v-if="islearningman"><br>你时刻关心着你的学业情况<br>查询了<span class="strong"> {{this.$store.state.cjcx}} </span>次成绩</p>
-    <p class="p4" v-else-if="isbuddle"><br>你是一个佛系淡然的人</p>
-    <p class="p4" v-else><br>你是一个神秘的人</p>
+    <p class="p1">这学期里<br><span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>一共使用了<span class="strong"> {{this.$store.state.fdzs}} </span>次福大助手</p>
+    <p class="p2"><br><span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>专注于学习<br>查询了<span class="strong"> {{this.$store.state.kjs}} </span>次空教室</p>
+    <p class="p3"><br><span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>打开了<span class="strong"> {{this.$store.state.dwsy}} </span>次大物实验<br>在实验的海洋里游玩</p>
+    <p class="p4" v-if="islearningman"><br><span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>时刻关心着<span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>的学业情况<br>查询了<span class="strong"> {{this.$store.state.cjcx}} </span>次成绩</p>
+    <p class="p4" v-else-if="isbuddle"><br><span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>是一个佛系淡然的人</p>
+    <p class="p4" v-else><br><span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>是一个神秘的人</p>
   </div>
 </template>
 

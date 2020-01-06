@@ -1,8 +1,8 @@
 <template>
   <div class="content" :style="fontContent">
-    <p class="p1">Wow<span class="blue"> You can really dance</span><br>你这个学期拥有<span class="strong"> 13 </span>门课程</p>
-    <p class="p2"><br>超过了<span class="strong"> 80% </span>的福大学子</p>
-    <p class="p3"><br>中午的西三<br>是不是有你</p>
+    <p class="p1">Wow<span class="blue"> <span v-if="this.$store.state.showInApp"> You</span><span v-else> He/She</span> can really dance</span><br><span v-if="!this.$store.state.showInApp">TA</span><span v-else>你</span>这个学期拥有<span class="strong"> {{this.$store.state.kc}} </span>门课程</p>
+    <p class="p2"><br>超过了<span class="strong"> {{(this.$store.state.kcPerc * 100).toFixed(2)}} % </span>的福大学子</p>
+    <p class="p3" v-show="this.$store.state.showInApp"><br>中午的西三<br>是不是有你</p>
   </div>
 </template>
 

@@ -145,20 +145,6 @@ export default {
       dom.top = h * array[2] + 'px'
       dom.left = w * array[3] + 'px'
     }
-    ,
-    // handleClick: function(e) {
-    //   if(this.$refs.checkBtn.checked) {
-    //     this.$store.dispatch('changeShow', true)
-    //   }
-    //   else {
-    //     // console.log(this.$refs.textContainer.classList)
-    //     console.log(this.$refs)
-    //     this.$refs.textContainer.classList.remove('shake')
-    //     this.$refs.textContainer.classList.add('shake')
-
-    //   }
-
-    // }
   },
   mounted: function () {
     let w = document.documentElement.clientWidth
@@ -172,7 +158,7 @@ export default {
     this.tableStyle.bottom = -0.20 * h + 'px'
     this.tableStyle.width = 0.8 * w + 'px'
     this.tableStyle.height = h * 0.8 + 'px'
-    this.tableStyle.left = -0.126 * w + 'px'
+    this.tableStyle.left = -0.16 * w + 'px'
 
     this.renderDivStyle(this.leaf1Style, [0.5, 0.5, 0.7, 0.405], h, w)
     this.renderDivStyle(this.leaf2Style, [0.22, 0.22, 0.57, 0.55], h, w)
@@ -185,18 +171,13 @@ export default {
     this.renderDivStyle(this.flower5Style, [0.09, 0.09, 0.83, 0.665], h, w)
     this.renderDivStyle(this.rabbitStyle, [0.07, 0.07, 0.59, 0.19], h, w)
     this.renderDivStyle(this.exploreStyle, [0.17, 0.12, 0.70, 0.40], h, w)
-    // this.exploreStyle.transform = 'translateX(-' + (e - 1) * w / 8 + 'px)'
     this.exploreStyle.left = (document.documentElement.clientWidth -
     parseFloat(this.exploreStyle.width)) / 2 + 'px'
-    console.log((document.documentElement.clientWidth -
-    parseFloat(this.exploreStyle.width)) / 2 + 'px')
     this.renderDivStyle(this.textStyle, [1, 0.2, 0.86, 0.0], h, w)
     this.textStyle.transform = 'translateX(+' + (e - 1) * w / 8 + 'px)'
     this.textStyle.width = document.documentElement.clientWidth + 'px'
     this.textStyle.fontSize = 55 * e1 * e2 + 'px'
     this.checkStyle.zoom = 4 * e1 * e2
-    // width: 15%
-    // height: 15%
   }
 }
 </script>
