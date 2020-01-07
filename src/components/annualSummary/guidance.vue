@@ -31,7 +31,7 @@ export default {
     this.iframeStyle.height = h + 'px'
     this.iframeStyle.width = w + 'px'
     if (/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(navigator.userAgent)) {
-      window.location.href = `fzuhelper://callback/annual`
+      window.location.href = `fzuhelper://callback/annual?token=${this.$store.state.token}`
     }
     else {
       this.showInComputer = true

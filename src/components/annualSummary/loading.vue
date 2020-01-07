@@ -22,7 +22,7 @@ export default {
     loading
   },
   mounted: function () {
-    
+
     if (/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(navigator.userAgent)) {
       this.loadingStyle.height = window.innerHeight + 'px'
       try {
@@ -30,12 +30,12 @@ export default {
         this.$store.dispatch('changeInApp', true)
       }
       catch(err) {
-        
+
       }
       this.preload()
     } else {
       this.$router.push({path: 'guidance'})
-      
+
     }
 
   },
@@ -49,6 +49,7 @@ export default {
       let path = 'https://statistics.fzuhelper.w2fzu.com/api/user/' + token
       axios.get(path)
       .then(res=>{
+
         let data = res['data']['message']
         this.$store.dispatch('changefdzs', data['fdzs'])
         this.$store.dispatch('changekjs', data['kjs'])
@@ -61,11 +62,11 @@ export default {
         this.$store.dispatch('changeStudentId', data['student_id'])
 
 
-        this.count++        
+        this.count++
       }).catch(err => {
-      }) 
+      })
 
-      
+
     },
     loadImg: function () {
       let imgs = [
@@ -98,6 +99,7 @@ export default {
         'static/image/view2/view2-1.png'
       ]
       this.total = imgs.length
+      // this.total = 1
       for (let img of imgs) {
         let image = new Image()
         image.src = img
@@ -111,6 +113,8 @@ export default {
     preload: function () {
       this.loadImg()
       this.waitData()
+      // 用我电脑的JJ割掉
+      // 割掉
     }
   },
 

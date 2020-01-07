@@ -12,6 +12,9 @@
 </template>
 
 <script>
+// 用我电脑的JJ割掉
+// 割掉割掉全部割掉
+// 快肏我，用力，淦
 export default {
   name: 'loading',
   data: function () {
