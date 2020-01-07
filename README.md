@@ -1,6 +1,6 @@
 # annual-summary
 
-> A Vue.js project
+> A Vue.js project -- 福大助手年度总结
 
 ## Build Setup
 
